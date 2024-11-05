@@ -10,18 +10,26 @@ resposta.send(` <html>
                         <meta charset="UTF-8"/>
                         <title>Cadastro de contato</title>
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+                        <style>
+                            body{
+                                width: 700px;
+                                margin: auto;
+                            }
+                        </style>
                     </head>
                     <body>
+                        <h2>Contato</h2></br>
+                        <hr>
                         <form class="row g-3" novalidate>
 
                             <div class="col-md-4">
                                 <label for="nome" class="form-label">Nome completo</label>
-                                <input type="text" class="form-control" id="nome" value="Mark" required>
+                                <input type="text" class="form-control" id="nome" required>
                             </div>
 
                             <div class="col-md-4">
                                 <label for="telefone" class="form-label">Celular</label>
-                                <input type="text" class="form-control" id="telefone" value="Otto" placeholder="(xx)xxxxx-xxxx" required>
+                                <input type="text" class="form-control" id="telefone" placeholder="(xx)xxxxx-xxxx" required>
                             </div>
 
                             <div class="col-md-4">
