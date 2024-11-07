@@ -4,7 +4,7 @@ const host = "0.0.0.0";
 const porta = 3000;
 const app = express();
 
-function cadastroContato(requisicao, resposta){
+function apresentaFormulario(requisicao, resposta){
 resposta.send(` <html>
                     <head>
                         <meta charset="UTF-8"/>
@@ -20,7 +20,7 @@ resposta.send(` <html>
                     <body>
                         <h2>Contato</h2></br>
                         <hr>
-                        <form class="row g-3" novalidate>
+                        <form method="POST" action="/formulario" class="row g-3" novalidate>
 
                             <div class="col-md-4">
                                 <label for="nome" class="form-label">Nome completo</label>
@@ -54,11 +54,17 @@ resposta.send(` <html>
                         </form>
                     </body>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-                </html>
-            `);
+                </html> `);
 }
 
-app.get('/contato', cadastroContato);
+function cadastrarAluno(resq, resp){
+    resp.send('Aluno cadastrado com sucesso');
+}
+
+app.get('/formulario', apresentaFormulario);
+
+app.post('/formulario', cadastrarAluno);
+
 app.listen(porta, host, () => {
     console.log("Servidor iniciado http://" + host + ":" + porta);
 });
